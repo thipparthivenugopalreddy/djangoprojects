@@ -1,0 +1,18 @@
+{%extends 'accounts/main.html'%}
+
+{%block content%}
+
+<h1>welcome to the create model</h1>
+
+<form  method="post">
+  {%csrf_token%}
+  {{formset.management_form}}
+  {%for form in formset%}
+  {{form}}
+  <hr>
+  {%endfor%}
+    
+  <input type="submit" name="" value="create">
+</form>
+
+{%endblock%}

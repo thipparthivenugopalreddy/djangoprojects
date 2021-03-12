@@ -1,0 +1,33 @@
+{%extends "blogapp/navbar.html"%}
+
+{%block content%}
+<h1>Posts</h1>
+<hr>
+<h1></h1>
+
+{{post.author}}:<br>{{post.message}}<br><hr> {{post.likes.count}}
+
+<a class="btn btn-primary" href="{% url "home"%}">back</a>
+
+<a class="btn btn-danger" href="{% url "update" post.id%}">edit</a>
+
+<a class="btn btn-danger" href="{% url "delete" post.id%}">delete</a>
+
+<form  method="post">
+  {%csrf_token%}
+
+  {%if user.post_likes.exists%}
+
+  <button type="submit" name="button">unlike</button>
+  {%else%}
+
+  <button type="submit" name="button">like</button>
+
+
+  {%endif%}
+
+</form>
+
+
+
+{%endblock%}

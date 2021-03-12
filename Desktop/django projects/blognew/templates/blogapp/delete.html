@@ -1,0 +1,17 @@
+{%extends "blogapp/navbar.html"%}
+
+{%block content%}
+<h1>Posts</h1>
+<hr>
+<h1></h1>
+
+{{post.author}}:<br>{{post.message}}<br><hr>
+
+<a class="btn btn-primary" href="{% url "home"%}">back</a>
+
+<form  method="post">
+  {%csrf_token%}
+  <input type="submit" name="" value="delete">
+</form>
+
+{%endblock%}

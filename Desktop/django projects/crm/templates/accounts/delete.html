@@ -1,0 +1,13 @@
+{%extends "accounts/main.html"%}
+
+{%block content%}
+
+<h1>welcome to the delete page</h1>
+<form  method="post">
+  {%csrf_token%}
+  are you sure to delete {{o.product}}
+  <a href="{% url 'home'%}">cancel</a>
+  <input type="submit" name="" value="delete">
+</form>
+
+{%endblock%}

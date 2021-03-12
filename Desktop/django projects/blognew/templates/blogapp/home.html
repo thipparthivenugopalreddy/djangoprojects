@@ -1,0 +1,9 @@
+{%extends "blogapp/navbar.html"%}
+
+{%block content%}
+<h1>Posts</h1>
+<hr>
+{%for post in object_list%}
+<a href="{% url "detail" post.id %}">{{post.id}}{{post.author}}</a>:<br>{{post.message}}<br><hr>
+{%endfor%}
+{%endblock%}
